@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultra-Phone Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="clouds">
+        <img src="Cloud_1.png" class="cloud" id="cloud1">
+        <img src="Cloud_2.png" class="cloud" id="cloud2">
+    </div>
+    <div class="game-container">
+        <div id="scene1" class="scene">
+            <h1>Welcome to the Ultra-Phone Game!</h1>
+            <p>You are the CEO of a mobile phone company competing in the market.</p>
+            <button onclick="nextScene('scene2')">Next</button>
+        </div>
+        <div id="scene2" class="scene">
+            <h1>Setting the Stage</h1>
+            <p>Your company and your competitor are deciding on pricing for a new mobile device.</p>
+            <p>You can set a high price or a low price.</p>
+            <p>The market has two segments: one that will pay a high price but prefers low, and another that only pays the low price.</p>
+            <button onclick="nextScene('scene3')">Understand</button>
+        </div>
+        <div id="scene3" class="scene">
+            <h1>Potential Outcomes</h1>
+            <p>Let's explore the potential outcomes based on different pricing strategies.</p>
+            <div class="outcome">
+                <h2>Both Price High</h2>
+                <p>Firm A: $800 million</p>
+                <p>Firm B: $800 million</p>
+            </div>
+            <div class="outcome">
+                <h2>Both Price Low</h2>
+                <p>Firm A: $600 million</p>
+                <p>Firm B: $600 million</p>
+            </div>
+            <div class="outcome">
+                <h2>You Price High, Competitor Prices Low</h2>
+                <p>Firm A: $0</p>
+                <p>Firm B: $1.2 billion</p>
+            </div>
+            <div class="outcome">
+                <h2>You Price Low, Competitor Prices High</h2>
+                <p>Firm A: $1.2 billion</p>
+                <p>Firm B: $0</p>
+            </div>
+            <button onclick="nextScene('scene4')">Proceed</button>
+        </div>
+        <div id="scene4" class="scene">
+            <h1>Make Your Decision</h1>
+            <p>What price will you set for your phone?</p>
+            <div class="choices">
+                <button onclick="makeChoice('high')">High</button>
+                <button onclick="makeChoice('low')">Low</button>
+            </div>
+        </div>
+        <div id="scene5" class="scene">
+            <h1>Results</h1>
+            <p id="result" class="result-text"></p>
+            <button onclick="showConclusion()">See Conclusion</button>
+        </div>
+        <div id="scene6" class="scene">
+            <h1>Conclusion and Lesson</h1>
+            <p id="conclusion"></p>
+            <p>This game only has one Nash equilibrium, where both companies choosing to set a low price is the most stable strategy, much like the scenario in the classic Prisoner's Dilemma.</p>
+            <p>Reference: Praveen K. Kopalle and Robert A. Shumsky, "Game Theory Models of Pricing," in The Oxford Handbook of Pricing Management, 2012.</p>
+            <button onclick="finishGame()">Finish</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

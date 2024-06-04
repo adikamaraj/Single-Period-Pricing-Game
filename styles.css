@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Press Start 2P', cursive;
+    background: url('background.png') no-repeat center center fixed;
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 20px;
+}
+
+.clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.cloud {
+    position: absolute;
+    width: 150px;
+    height: auto;
+    animation: sway 10s infinite alternate ease-in-out;
+}
+
+#cloud1 {
+    top: 30%;
+    left: 5%;
+    animation: bounce 12s infinite alternate ease-in-out;
+}
+
+#cloud2 {
+    top: 40%;
+    left: 85%;
+    animation: bounce 15s infinite alternate ease-in-out;
+}
+
+@keyframes sway {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(20px); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.game-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+    border: 10px solid white;
+    box-shadow: 
+        0 0 0 3px #C0E3F2,
+        0 0 0 10px white;
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    top: 100px;
+}
+
+h1 {
+    font-size: 22px; /* Increased size */
+    line-height: 1.5; /* Added line spacing */
+    margin-bottom: 20px; /* Added space below the heading */
+}
+
+h2 {
+    font-size: 14px !important; /* Adjust size for subtitles */
+    line-height: 1.4; /* Added line spacing */
+    margin-top: 20px; /* Space above the subtitle */
+    margin-bottom: 10px; /* Space below the subtitle */
+    color: #000; /* Ensure text color is black */
+}
+
+p, .result-text {
+    font-size: 12px; /* Increased size */
+    line-height: 1.5; /* Added line spacing */
+    margin-bottom: 20px; /* Added space below the paragraph */
+    font-family: 'Press Start 2P', cursive;
+}
+
+.choices {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    background-color: #fff;
+    border: 4px solid #000;
+    box-shadow: 0px 0px 0px 2px #C0E3F2, 8px 8px 0px 0px #000, 8px 8px 0px 2px #C0E3F2;
+    font-family: 'Press Start 2P', cursive;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    background-color: #ddd;
+    transform: translate(-2px, -2px);
+    box-shadow: 0px 0px 0px 2px #C0E3F2, 6px 6px 0px 0px #000, 6px 6px 0px 2px #C0E3F2;
+}
+
+button:active {
+    transform: translate(0px, 0px);
+    box-shadow: 0px 0px 0px 2px #C0E3F2, 4px 4px 0px 0px #000, 4px 4px 0px 2px #C0E3F2;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.outcome {
+    margin: 20px 0;
+}
+
+.outcome h2 {
+    font-size: 14px !important; /* Adjust size for subtitles */
+    line-height: 1.4; /* Added line spacing */
+    margin-top: 20px; /* Space above the subtitle */
+    margin-bottom: 10px; /* Space below the subtitle */
+}
+
+/* Hide all scenes by default */
+.scene {
+    display: none;
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 828px) {
+    html, body {
+        height: auto;
+        justify-content: flex-start;
+        background: url('background.png') no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    .game-container {
+        padding: 30px 15px;
+        max-width: 90%;
+        top: 20px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    p, button, #result {
+        font-size: 10px;
+    }
+
+    .cloud {
+        width: 100px;
+    }
+
+    #cloud1 {
+        top: 20%;
+        left: 10%;
+    }
+
+    #cloud2 {
+        top: 20%;
+        left: 60%;
+    }
+}
