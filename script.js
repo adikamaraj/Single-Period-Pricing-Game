@@ -32,6 +32,10 @@ function makeChoice(playerChoice) {
     nextScene('scene5');
 }
 
+function retry() {
+    nextScene('scene4');
+}
+
 function showConclusion() {
     document.getElementById('conclusion').innerText = `Your total contribution/earnings are $${totalContribution} million.`;
     nextScene('scene6');
