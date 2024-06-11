@@ -1,4 +1,5 @@
 let totalContribution = 0;
+let retryCount = 0;
 
 function nextScene(sceneId) {
     const scenes = document.querySelectorAll('.scene');
@@ -9,6 +10,11 @@ function nextScene(sceneId) {
 }
 
 function makeChoice(playerChoice) {
+    gtag('event', 'make_choice', {
+        'event_category': 'Game',
+        'event_label': playerChoice
+    });
+
     const choices = ['high', 'low'];
     const computerChoice = choices[Math.floor(Math.random() * choices.length)];
     
@@ -33,6 +39,12 @@ function makeChoice(playerChoice) {
 }
 
 function retry() {
+    retryCount++;
+    gtag('event', 'retry', {
+        'event_category': 'Game',
+        'event_label': 'Retry Count',
+        'value': retryCount
+    });
     nextScene('scene4');
 }
 
